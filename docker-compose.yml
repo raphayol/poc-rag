@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  # llama:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: llama_server
+  #   restart: unless-stopped
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ./models:/models
+  #   command: >
+  #     /opt/llama.cpp/build/bin/llama-server
+  #     -m /models/mistral-7b-instruct-v0.2.Q2_K.gguf
+  #     --host 0.0.0.0
+  #     --port 11434
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_server
+    restart: unless-stopped
+    environment:
+      - OLLAMA_DEBUG=1
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./models:/root/.ollama/models

@@ -1,0 +1,9 @@
+chromadb
+langchain
+langchain-community
+langchain-ollama
+langchain-text-splitters
+langchain-huggingface
+sentence-transformers
+python-dotenv
+requests
